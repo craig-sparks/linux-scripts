@@ -9,5 +9,10 @@ else
  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)\$ '
 fi
 
+if !$NGROK_LOCATION || !$NGROK_CONFIG; then
+	echo "NGROK_LOCATION and/or NGROK_CONFIG needs to be configured"
+	end
+fi
+
 # Ngrok start
 alias start-ngrok="cd $NGROK_LOCATION && ./ngrok start --config=$NGROK_CONFIG --all > /dev/null &"
