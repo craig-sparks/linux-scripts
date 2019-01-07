@@ -10,4 +10,4 @@ else
 fi
 
 # Ngrok start
-alias start-ngrok="cd ~/Ngrok/ && ./ngrok start --config=800sites.yml --all > /dev/null &"
+alias start-ngrok="cd $NGROK_LOCATION && ./ngrok start --config=$NGROK_CONFIG --all > /dev/null &"
